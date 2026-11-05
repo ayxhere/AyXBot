@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.compose")
+    // No kotlin.plugin.compose here — that plugin does not exist at Kotlin 1.9.24.
+    // Compose compiler version is pinned via composeOptions below (1.5.14).
 }
 
 android {
