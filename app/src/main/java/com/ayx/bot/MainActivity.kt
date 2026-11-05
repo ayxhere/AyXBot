@@ -153,7 +153,7 @@ private fun AyXBotApp(
     val scope = rememberCoroutineScope()
 
     var screen by remember { mutableStateOf("chat") }
-    var messages by remember { mutableStateOf(ChatStore.load(context)) }
+    var messages by remember { mutableStateOf<List<ChatStore.StoredMessage>>(ChatStore.load(context)) }
     var input by remember { mutableStateOf("") }
     var thinking by remember { mutableStateOf(false) }
     var recording by remember { mutableStateOf(false) }
