@@ -1,3 +1,5 @@
+import java.util.Base64
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -34,7 +36,7 @@ android {
                 && !keyAlias.isNullOrEmpty() && !keyPass.isNullOrEmpty()
             ) {
                 val ksFile = File(buildDir, "ayxbot-release.keystore")
-                ksFile.writeBytes(java.util.Base64.getDecoder().decode(ksBase64))
+                ksFile.writeBytes(Base64.getDecoder().decode(ksBase64))
                 signingConfig = signingConfigs.create("release") {
                     storeFile = ksFile
                     storeType = "PKCS12"
